@@ -1,10 +1,9 @@
 # HTTP client
 
-[![npm](https://img.shields.io/npm/v/@meltwater/mlabs-http.svg)](https://www.npmjs.com/package/@meltwater/mlabs-http)
-[![github](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/meltwater/mlabs-http)
-[![docs](https://img.shields.io/badge/docs-master-green.svg)](https://github.com/meltwater/mlabs-http/tree/master/docs)
-[![Codecov](https://img.shields.io/codecov/c/github/meltwater/mlabs-http.svg)](https://codecov.io/gh/meltwater/mlabs-http)
-[![CircleCI](https://img.shields.io/circleci/project/github/meltwater/mlabs-http.svg)](https://circleci.com/gh/meltwater/mlabs-http)
+[![npm](https://img.shields.io/npm/v/@pureskillgg/mlabs-http.svg)](https://www.npmjs.com/package/@pureskillgg/mlabs-http)
+[![github](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/pureskillgg/mw-mlabs-http)
+[![docs](https://img.shields.io/badge/docs-master-green.svg)](https://github.com/pureskillgg/mw-mlabs-http/tree/master/docs)
+[![CI](https://github.com/pureskillgg/mw-mlabs-http/actions/workflows/main.yml/badge.svg)](https://github.com/pureskillgg/mw-mlabs-http/actions/workflows/main.yml)
 
 HTTP client wrapper around [Got].
 
@@ -19,22 +18,22 @@ Logging can be customized per-client and per-request.
 Supports Prometheus metric collection for all requests.
 
 For a GraphQL client with a corresponding feature set,
-see [@meltwater/mlabs-graphql].
+see [@pureskillgg/mlabs-graphql].
 
-[@meltwater/mlabs-graphql]: https://github.com/meltwater/mlabs-graphql
+[@pureskillgg/mlabs-graphql]: https://github.com/pureskillgg/mlabs-graphql
 
 ## Installation
 
 Add this as a dependency to your project using [npm] with
 
 ```
-$ npm install @meltwater/mlabs-http
+$ npm install @pureskillgg/mlabs-http
 ```
 
 or using [Yarn] with
 
 ```
-$ yarn add @meltwater/mlabs-http
+$ yarn add @pureskillgg/mlabs-http
 ```
 
 [npm]: https://www.npmjs.com/
@@ -45,7 +44,7 @@ $ yarn add @meltwater/mlabs-http
 **See the complete [API documentation](./docs) and [working examples](./examples).**
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 
 const logResponse = async () => {
   const http = createHttpClient({origin: 'https://httpbin.org'})
@@ -60,7 +59,7 @@ logResponse().catch(err => { console.error(err) })
 
 ```js
 import { Registry } from 'prom-client'
-import { createHttpClient, collectMetrics } from '@meltwater/mlabs-http'
+import { createHttpClient, collectMetrics } from '@pureskillgg/mlabs-http'
 
 const register = new Registry()
 
@@ -78,7 +77,7 @@ logMetrics().catch(err => { console.error(err) })
 ## Development Quickstart
 
 ```
-$ git clone https://github.com/meltwater/mlabs-http.git
+$ git clone https://github.com/pureskillgg/mw-mlabs-http.git
 $ cd mlabs-http
 $ nvm install
 $ yarn
@@ -99,10 +98,10 @@ The [mlabs-http source] is hosted on GitHub.
 Clone the project with
 
 ```
-$ git clone git@github.com:meltwater/mlabs-http.git
+$ git clone git@github.com:pureskillgg/mw-mlabs-http.git
 ```
 
-[mlabs-http source]: https://github.com/meltwater/mlabs-http
+[mlabs-http source]: https://github.com/pureskillgg/mw-mlabs-http
 
 ### Requirements
 
@@ -133,20 +132,19 @@ $ yarn
 [npm]: https://www.npmjs.com/
 [nvm]: https://github.com/creationix/nvm
 
-#### CircleCI
+#### GitHub Actions
 
-_CircleCI should already be configured: this section is for reference only._
+_GitHub Actions is already configured: this section is for reference only._
 
-The following environment variables must be set on [CircleCI]:
+The following secrets must be set on the repository:
 
-- `NPM_TOKEN`: npm token for installing and publishing packages.
-- `NPM_TEAM`: npm team to grant read-only package access
-  (format `org:team`, optional).
-- `CODECOV_TOKEN`: Codecov token for uploading coverage reports (optional).
-
-These may be set manually or by running the script `./.circleci/envvars.sh`.
-
-[CircleCI]: https://circleci.com/
+- `NPM_TOKEN`: npm token for publishing packages.
+- `GH_USER`: GitHub username for the bot account.
+- `GH_TOKEN`: GitHub token for the bot account.
+- `GIT_USER_NAME`: Git user name for version commits.
+- `GIT_USER_EMAIL`: Git user email for version commits.
+- `GPG_PRIVATE_KEY`: GPG private key for signing version commits.
+- `GPG_PASSPHRASE`: Passphrase for the GPG private key.
 
 ### Development tasks
 
@@ -163,7 +161,7 @@ $ yarn run
 Release a new version using [`npm version`][npm version].
 This will run all tests, update the version number,
 create and push a tagged commit,
-and trigger CircleCI to publish the new version to npm.
+and trigger GitHub Actions to publish the new version to npm.
 
 - **Update the CHANGELOG before each new release after version 1.**
 - New versions are released when the commit message is a valid version number.
