@@ -20,7 +20,7 @@ Every function described above is a top-level export.
 You can import any of them like this:
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 ```
 
 ### Constants
@@ -70,7 +70,7 @@ Create an [HttpClient] with an API compatible with [Got].
 ##### JSON requests
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 
 const http = createHttpClient({origin: 'https://httpbin.org'})
 
@@ -81,7 +81,7 @@ await http.post('post', { json: { foo: 'bar' } })
 ##### Full response
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 
 const http = createHttpClient({
   resolveBodyOnly: false,
@@ -100,7 +100,7 @@ const { body, statusCode } = await http.get('get', {
 ##### With custom Got options
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 
 const http = createHttpClient({
   extend: {headers: {foo: 'bar'}},
@@ -113,7 +113,7 @@ const body = await http.get('get')
 ##### Control logging
 
 ```js
-import { createHttpClient } from '@meltwater/mlabs-http'
+import { createHttpClient } from '@pureskillgg/mlabs-http'
 
 const http = createHttpClient({
   origin: 'https://httpbin.org',
@@ -364,7 +364,7 @@ Each handler is passed the following options in the first argument:
 [Got `prefixUrl`]: https://github.com/sindresorhus/got#prefixurl
 [`got.extend`]: https://github.com/sindresorhus/got#gotextendoptions
 [URL origin]: https://nodejs.org/api/url.html#url_url_strings_and_url_objects
-[Logger]: https://github.com/meltwater/mlabs-logger
+[Logger]: https://github.com/pureskillgg/mlabs-logger
 [Prometheus Registry]: https://github.com/siimon/prom-client#multiple-registries
 [Prometheus client]: https://github.com/siimon/prom-client
 [quick-lru]: https://github.com/sindresorhus/quick-lru
