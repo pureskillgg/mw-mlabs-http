@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [5.0.1] / 2026-05-31
+
+### Changed
+
+- Migrate from `@meltwater` to `@pureskillgg` dependencies.
+- Update CI workflows and refresh the lock file.
+
 ## [5.0.0] / 2022-04-03
 
 ### Changed
@@ -166,7 +173,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 [makenew-node-lib]: https://github.com/meltwater/makenew-node-lib
 
-[Unreleased]: https://github.com/meltwater/mlabs-http/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/pureskillgg/mw-mlabs-http/compare/v5.0.1...HEAD
+[5.0.1]: https://github.com/pureskillgg/mw-mlabs-http/compare/v5.0.0...v5.0.1
 [5.0.0]: https://github.com/meltwater/mlabs-http/compare/v4.0.0...v5.0.0
 [4.0.0]: https://github.com/meltwater/mlabs-http/compare/v3.2.0...v4.0.0
 [3.2.0]: https://github.com/meltwater/mlabs-http/compare/v3.1.1...v3.2.0
