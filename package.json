@@ -1,6 +1,6 @@
 {
   "name": "@pureskillgg/mlabs-http",
-  "version": "5.0.1",
+  "version": "6.0.0",
   "description": "HTTP client wrapper around Got.",
   "type": "module",
   "main": "index.js",
